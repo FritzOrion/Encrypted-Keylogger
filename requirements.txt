@@ -1,2 +1,19 @@
 pynput
 python-dotenv
+
+# Create your own .env file to include:
+EMAIL_ADDRESS = 'YOUREMAIL@gmail.com'
+EMAIL_PASSWORD = 'YOURPASSWORD'  # Use app-specific password if 2FA is on
+SEND_INTERVAL = '60'
+LOG_FILE = 'keylog.txt'
+ENCRYPTION_KEY = 'YOURENCRYPTION_KEY' 
+
+# Ecnryption key can be created with AES-256 by doing the following:
+
+Bash% Python3 -m pip install cryptography
+
+Python% 
+  from cryptography.fernet import Fernet
+
+  key = Fernet.generate_key()
+  print(key.decode())  # Save this output securely and it will be your encryption key
